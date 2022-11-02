@@ -10,21 +10,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.cydeo.utilitiies.Driver.*;
+
 
 public class BrowserUtils {
     //Methods are static. Because we do not want to create an object to call those methods.
     // We just want to call those methods with class name. That is why they are static type
 
-public static List<String> getElementsText(List<WebElement> locator){
-    List<WebElement> elementList = locator;
-    List<String> elemTexts = new ArrayList<>();
-
-    for (WebElement each: elementList){
-        elemTexts.add(each.getText());
+    public static List<String> getElementsText(List<WebElement> locator) {
+        List<String> actualTableHeader = new ArrayList<>();
+        for(WebElement each : locator){
+            actualTableHeader.add(each.getText());
+        }
+        return actualTableHeader;
     }
 
-return elemTexts;
-}
+
     /**
      * This method is used to pause the code for given seconds
      * It is static method we can call with class name
@@ -61,7 +62,7 @@ return elemTexts;
     }
 
     public static void waitForInvisibilityOf(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
+        WebDriverWait wait = new WebDriverWait(getDriver(),15);
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
