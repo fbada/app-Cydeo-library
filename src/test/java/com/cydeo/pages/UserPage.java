@@ -19,7 +19,7 @@ public class UserPage {
     public WebElement userProfile;
 
 
-    @FindBy(xpath = "//table/thead")
+    @FindBy(tagName = "th")
     public List<WebElement> tableContents;
     //contents for the libararian USERS page
 

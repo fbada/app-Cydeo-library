@@ -27,7 +27,7 @@ public class UsersTable_StepDef {
         BrowserUtils.waitForVisibility(basePage.booksDashIcon, 10);
 
         switch (string.toLowerCase()){
-            case "user":
+            case "users":
                 basePage.userPageIcon.click();
                 break;
             case "dashboard":
@@ -42,15 +42,10 @@ public class UsersTable_StepDef {
 
     }
     @Then("table should have following column names:")
-    public void table_should_have_following_column_names(List<String> expDataTable) {
-        //expected keyword dictates that an exp to act assertion is iin play
+    public void table_should_have_following_column_names(List<String> expectedTableHeader) {
 
-       List<String> actDataTable = BrowserUtils.getElementsText(userPage.tableContents);
-        Assert.assertEquals(expDataTable, actDataTable);
-
-
-
+        BrowserUtils.waitForVisibility(userPage.userProfile,10);
+        List<String> actualTableHeader = BrowserUtils.getElementsText(userPage.tableContents);
+        Assert.assertEquals(expectedTableHeader,actualTableHeader);
     }
-
-
 }

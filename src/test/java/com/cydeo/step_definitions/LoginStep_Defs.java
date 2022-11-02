@@ -56,7 +56,7 @@ WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
     }
     @Then("user should see books displayed")
     public void user_should_see_books_displayed() {
-        wait.until(ExpectedConditions.visibilityOf(basePage.userDashIcon));
+        wait.until(ExpectedConditions.visibilityOf(userPage.tableContents.get(0)));
         act= Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(act.contains("books"));
     }
@@ -102,29 +102,6 @@ WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         loginPage.submitButton.click();
     }
 
-    @And("clicks on {string} link")
-    public void clicks_on_link(String string) {
-        BrowserUtils.waitForVisibility(basePage.booksDashIcon, 10);
-
-        switch (string){
-            case "User":
-                basePage.userPageIcon.click();
-                break;
-            case "Dashboard":
-                basePage.userDashIcon.click();
-                break;
-            case "Books":
-                basePage.booksDashIcon.click();
-                break;
-        }
-
-
-
-    }
-    @Then("table should have following column names:")
-    public void table_should_have_following_column_names(List<String> tableContent) {
-
-    }
 
 
 }
