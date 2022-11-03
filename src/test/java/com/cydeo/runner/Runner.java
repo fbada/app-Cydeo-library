@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue = "com/cydeo/step_definitions",
         tags = "@HiOscar",
-        dryRun =false
+        dryRun =false,
+        publish = true
 )
 
 public class Runner {
