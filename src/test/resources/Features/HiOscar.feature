@@ -15,6 +15,6 @@ Feature: HiOscar website UI insurance selection verification
     Examples:
       | year | coverage           | partner | area       | title |
       | 2023 | Employer-provided  | Oscar   | New Jersey | Oscar |
-      | 2022 | Medicare Advantage | Oscar   | Texas      | Oscar |
-      | 2022 | Medicare Advantage | Oscar   | Florida    | Oscar |
+     # | 2022 | Medicare Advantage | Oscar   | Texas      | Oscar |
+     # | 2022 | Medicare Advantage | Oscar   | Florida    | Oscar |
 
