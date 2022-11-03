@@ -1,0 +1,45 @@
+pipeline {
+  agent any
+
+  environment {
+    TAG = "demo_${env.BRANCH_NAME}_${env.BUILD_NUMBER}"
+  }
+
+  stages {
+    stage("Checkout") {
+      steps {
+        checkout scm
+      }
+    }
+
+
+    stage('Run Selenium Tests') {
+      steps {
+        try {
+          sh #!/bin/bash -e
+            # Build, create and start containers in a background
+
+            docker-compose -p up -d --build
+
+
+
+        } finally {
+          publishHTML target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: true,
+          keepAll: true,
+          reportDir: 'reports',
+          reportFiles: 'report.html',
+          reportName: 'Robot Framework Test Execution Report'
+          ]
+          junit 'reports/*.xml'
+
+          sh #!/bin/bash
+            # Stop and remove the containers
+            docker-compose -p  down
+
+        }
+      }
+    }
+  }
+}

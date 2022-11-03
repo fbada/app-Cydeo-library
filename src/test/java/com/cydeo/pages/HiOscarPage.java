@@ -1,8 +1,8 @@
 package com.cydeo.pages;
 
 
-import com.cydeo.utilitiies.BrowserUtils;
-import com.cydeo.utilitiies.Driver;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

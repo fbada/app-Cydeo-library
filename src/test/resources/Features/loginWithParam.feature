@@ -8,7 +8,7 @@ Feature: Login with parameters
     When the user enters username "librarian49@library"
     And the user enters password "8l9bsLAN"
     And the user enters clicks the sign in button
-    Then there should be 1303 users
+    Then there should be 1309 users
 
   @multiUserLogin
   Scenario Outline: Login as user and verify the name in dashboard

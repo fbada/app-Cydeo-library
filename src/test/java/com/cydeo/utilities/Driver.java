@@ -1,15 +1,13 @@
-package com.cydeo.utilitiies;
+package com.cydeo.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -69,19 +67,44 @@ public class Driver {
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
-                case "opera":
-                  WebDriverManager.operadriver().setup();
-                  driverPool.set(new OperaDriver());
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+                    case "firefox-remote":
+
+                    try {
+                        URL url = new URL("http://localhost:4444/wd/hub");
+                        FirefoxOptions options = new FirefoxOptions();
+                        driverPool.set(new RemoteWebDriver(url, options));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
+                case "chrome-remote":
+                    try {
+                        URL url = new URL("http://localhost:4444/wd/hub");
+                       ChromeOptions options = new ChromeOptions();
+
+                        driverPool.set(new RemoteWebDriver(url, options));
+
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case "edge-remote":
+                    try {
+                        URL url = new URL("http://localhost:4444/wd/hub");
+                        EdgeOptions options = new EdgeOptions();
+                        driverPool.set(new RemoteWebDriver(url, options));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
             }
 
         }
 
         return driverPool.get();
-
     }
 
     // This method will make sure our driver value is always null after using quit() method

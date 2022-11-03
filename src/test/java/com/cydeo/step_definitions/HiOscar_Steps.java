@@ -1,8 +1,8 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.HiOscarPage;
-import com.cydeo.utilitiies.BrowserUtils;
-import com.cydeo.utilitiies.Driver;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

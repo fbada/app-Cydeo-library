@@ -3,19 +3,14 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.pages.UserPage;
-import com.cydeo.utilitiies.BrowserUtils;
-import com.cydeo.utilitiies.ConfigurationReader;
-import com.cydeo.utilitiies.Driver;
-import io.cucumber.java.en.And;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.jsoup.Connection;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class LoginStep_Defs {
 LoginPage loginPage = new LoginPage();

@@ -3,17 +3,11 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.pages.UserPage;
-import com.cydeo.utilitiies.BrowserUtils;
-import com.cydeo.utilitiies.Driver;
+import com.cydeo.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UsersTable_StepDef {
