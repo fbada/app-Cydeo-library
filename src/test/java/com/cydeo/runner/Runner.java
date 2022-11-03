@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/Features",
         glue = "com/cydeo/step_definitions",
-        tags = "",
+        tags = "@HiOscar",
         dryRun =false
 )
 
