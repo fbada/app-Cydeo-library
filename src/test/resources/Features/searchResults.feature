@@ -1,3 +1,4 @@
+@smoke
 Feature: A Search functionality on the users page
   As a user, when I login as a librarian and I go to Users page, then table should have following columns:
   • Actions
@@ -7,7 +8,7 @@ Feature: A Search functionality on the users page
   • Group
   • Status
 
-  @wip
+
   Scenario: Table columns names
     Given user is on the login page
     And user logs in as a librarian

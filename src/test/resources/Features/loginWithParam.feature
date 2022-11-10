@@ -1,17 +1,16 @@
-@smoke
+
 Feature: Login with parameters
 
   Background:
     Given user is on the login page
 
-  @librarianParam
   Scenario: Login as librarian 49
     When the user enters username "librarian49@library"
     And the user enters password "8l9bsLAN"
     And the user enters clicks the sign in button
     Then there should be 1309 users
 
-  @multiUserLogin
+  @smoke
   Scenario Outline: Login as user and verify the name in dashboard
     When the user enters "<username>" and "<password>"
     Then the user should see their "<name>" in the dashboard
