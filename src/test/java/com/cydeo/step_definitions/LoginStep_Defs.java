@@ -3,6 +3,7 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.pages.UserPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -51,7 +52,7 @@ WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
     }
     @Then("user should see books displayed")
     public void user_should_see_books_displayed() {
-        wait.until(ExpectedConditions.visibilityOf(userPage.tableContents.get(0)));
+       BrowserUtils.waitFor(3);
         act= Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(act.contains("books"));
     }
