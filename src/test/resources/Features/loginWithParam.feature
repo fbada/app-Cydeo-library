@@ -1,3 +1,4 @@
+@smoke
 Feature: Login with parameters
 
   Background:
